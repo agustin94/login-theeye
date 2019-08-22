@@ -1,0 +1,15 @@
+{
+  "name": "login-theeye",
+  "version": "1.0.0",
+  "description": "Automatizacion de login",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Agustin Moreno",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^24.9.0",
+    "puppeteer": "^1.19.0"
+  }
+}
