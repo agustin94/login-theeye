@@ -1,5 +1,6 @@
-const puppeteer = require('puppeteer');
 
+const puppeteer = require('puppeteer');
+const fs = require('fs')
 
 test('login',async()=>{
     const browser = await puppeteer.launch({
@@ -7,9 +8,12 @@ test('login',async()=>{
       args: ['--start-fullscreen']
     });
   const page = await browser.newPage();
-
-  var user = "agustin+qatest@theeye.io"
-  var pass = "Automation2019!"
+  
+    //assertions
+  const contenido = fs.readFileSync("config.json");
+  const jsonContenido = JSON.parse(contenido);
+  const user = jsonContenido.user;
+  var pass = jsonContenido.pass;
   await page.setViewport({ width: 1366, height: 768});
   //ingresamos al sitio
   await page.goto('https://theeye.io/');
@@ -31,5 +35,6 @@ test('login',async()=>{
   //click a login
   let buttonSelector = 'button[data-hook="start-login"]';
   await page.click(buttonSelector);
+  browser.close();
   process.exit;
 },30000);
