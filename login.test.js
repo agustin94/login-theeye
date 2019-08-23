@@ -4,7 +4,7 @@ const fs = require('fs')
 const CONF_PATH = '/root/config.json';
 test('login',async()=>{
     const browser = await puppeteer.launch({
-      //headless: false,
+      headless: false,
       args: ['--start-fullscreen']
     });
   const page = await browser.newPage();
