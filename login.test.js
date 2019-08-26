@@ -18,6 +18,7 @@ test('login',async()=>{
   const pass = CONFIG.pass;
   await page.setViewport({ width: 1366, height: 768});
   //ingresamos al sitio
+  
   await page.goto('https://theeye.io/');
   //click a "ingrese"
   const linkHandlers = await page.$x('//*[@id="navbarCollapse"]/ul/li[5]/a');  
