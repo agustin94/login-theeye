@@ -4,8 +4,8 @@ const fs = require('fs')
 const CONF_PATH = '/root/config.json';
 test('login',async()=>{
     const browser = await puppeteer.launch({
-      headless: false,
-      args: ['--start-fullscreen',
+      headless: true,
+      args: [//'--start-fullscreen',
       '--no-sandbox', 
       '--disable-setuid-sandbox']
     });
