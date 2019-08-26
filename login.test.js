@@ -13,7 +13,7 @@ test('login',async()=>{
   
     //assertions
   const contenido = fs.readFileSync(CONF_PATH);
-  const jsonContenido = JSON.parse(contenido);
+  const jsonContenido = require(contenido);
   const user = jsonContenido.user;
   var pass = jsonContenido.pass;
   await page.setViewport({ width: 1366, height: 768});
