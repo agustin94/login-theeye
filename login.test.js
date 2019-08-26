@@ -5,7 +5,9 @@ const CONF_PATH = '/root/config.json';
 test('login',async()=>{
     const browser = await puppeteer.launch({
       headless: false,
-      args: ['--start-fullscreen']
+      args: ['--start-fullscreen',
+      ,'--no-sandbox', 
+      '--disable-setuid-sandbox']
     });
   const page = await browser.newPage();
   
