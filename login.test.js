@@ -6,7 +6,7 @@ test('login',async()=>{
     const browser = await puppeteer.launch({
       headless: false,
       args: ['--start-fullscreen',
-      ,'--no-sandbox', 
+      '--no-sandbox', 
       '--disable-setuid-sandbox']
     });
   const page = await browser.newPage();
