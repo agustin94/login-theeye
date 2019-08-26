@@ -1,7 +1,8 @@
 
 const puppeteer = require('puppeteer');
 const fs = require('fs')
-const CONF_PATH = '/root/config.json';
+const CONFIG =  require ('/root/config.json');
+
 test('login',async()=>{
     const browser = await puppeteer.launch({
       headless: true,
@@ -12,11 +13,9 @@ test('login',async()=>{
   const page = await browser.newPage();
   
     //assertions
-  const contenido = fs.readFileSync(CONF_PATH);
-  const jsonContenido = JSON.parse(contenido);
-  const user = jsonContenido.user;
-  
-  var pass = jsonContenido.pass;
+  //const jsonContenido = JSON.parse(CONF);
+  const user = CONFIG.user;
+  const pass = CONFIG.pass;
   await page.setViewport({ width: 1366, height: 768});
   //ingresamos al sitio
   
